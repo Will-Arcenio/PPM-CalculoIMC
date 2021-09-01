@@ -23,54 +23,54 @@ function calculaImc() {
     imc = peso/(altura * altura);
 
     // Classificação
-    switch (parseFloat(imc)) {
+    switch (imc) {
         case (imc < 16):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'magreza-grave';
             classiName = 'Magreza Grave';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
         case ((imc >= 16) && (imc < 17)):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'magreza-moderada';
             classiName = 'Magreza Moderada';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
         case ((imc >= 17) && (imc < 18.5)):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'magreza-leve';
             classiName = 'Magreza Leve';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
         case ((imc >= 18.5) && (imc < 25)):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'saudavel';
             classiName = 'Saudável';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
         case ((imc >= 25) && (imc < 30)):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'sobrepeso';
             classiName = 'Sobrepeso';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
         case ((imc >= 30) && (imc < 35)):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'obesidade-grau-1';
             classiName = 'Obesidade Grau I';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
         case ((imc >= 35) && (imc < 40)):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'obesidade-grau-2';
             classiName = 'Obesidade Grau II';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
         case (imc >= 40):
-            eclassificacao.classList.toggle('');
+            eClassificacao.classList.toggle('');
             classificacao = 'obesidade-grau-3';
             classiName = 'Obesidade Grau III';
-            eclassificacao.classList.toggle(classificacao);
+            eClassificacao.classList.toggle(classificacao);
             break;
     }
 
@@ -78,7 +78,7 @@ function calculaImc() {
 
     // Add a informação nos campos
     document.getElementById('imc-value').innerHTML = imc.toFixed(2);
-    document.getElementById('classificacao').innerHTML = '' + classiName;
+    document.querySelector('#classificacao').innerHTML = classiName;
 }
 
 
@@ -86,5 +86,5 @@ function limpar() {
     let altura = document.getElementById('altura').value = '';
     let peso = document.getElementById('peso').value = '';
     document.getElementById('imc-value').innerHTML = '0.00'
-    document.getElementById('classificacao').innerHTML = 'Teste'
+    document.getElementById('classificacao').innerHTML = ''
 }
